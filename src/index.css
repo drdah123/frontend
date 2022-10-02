@@ -1,3 +1,6 @@
+:root {
+  --primary-background-color: #404040;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -6,8 +9,104 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+* {
+  font-weight: 600;
+}
+
+.site-container {
+  min-height: 100vh;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+main {
+  flex: 1;
+}
+.btn-primary {
+  background-color: #f0c040;
+  color: #000000;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.rating span {
+  color: #ffc000;
+}
+
+.product {
+  border: 1px var(--primary-background-color) solid;
+  margin: 1rem;
+}
+
+.product img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.product-info {
+  padding: 1rem;
+  text-decoration: none;
+}
+.product-info a {
+  text-decoration: none;
+  color: black;
+}
+
+.img-large {
+  max-width: 100%;
+}
+
+.img-thumbnail {
+  height: 80px;
+}
+
+.small-container {
+  max-width: 600px;
+}
+
+.checkout-steps > div {
+  border-bottom: 0.2rem solid #a0a0a0;
+  color: #a0a0a0;
+}
+
+.checkout-steps > div.active {
+  border-bottom: 0.2rem solid #f08000;
+  color: #f08000;
+}
+.back-btn {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #ffc000;
+}
+.edit-btn {
+  text-decoration: none;
+  color: #ffc000;
+  font-weight: 700;
+}
+.edit-btn:hover {
+  color: #000000;
+}
+
+.link-item {
+  text-decoration: none;
+  margin-left: 0.5rem;
+  color: #000000;
+}
+.link-item:hover {
+  color: #f08000;
+}
+.preview-btn {
+  font-weight: 500;
+  padding: 0.7rem;
+  font-size: 20px;
+}
+.preview-btn:hover {
+  background-color: #000000;
+  color: #f0c040;
 }
