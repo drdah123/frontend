@@ -14,7 +14,7 @@ const Product = (props) => {
   const addToCartHandler = async (item) => {
     const existedItem = CartItems.find((element) => element._id === item._id);
     const quantity = existedItem ? existedItem.quantity + 1 : 1;
-    const { data } = await axios.get(`/api/products/${item._id}`);
+    const { data } = await axios.get(`https://meernn.herokuapp.com/api/products/${item._id}`);
     if (data.countInStock < quantity) {
       window.alert(`Sorry, there is ${data.countInStock} `);
       return;

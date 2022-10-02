@@ -21,7 +21,7 @@ const SigninScreen = () => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post('/api/users/signin', {
+      const { data } = await axios.post('https://meernn.herokuapp.com/api/users/signin', {
         email,
         password,
       });
