@@ -1,7 +1,5 @@
-import React, { useEffect, useReducer, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useReducer } from 'react';
 import axios from 'axios';
-import loggoer from 'use-reducer-logger';
 import { Col, Row } from 'react-bootstrap';
 import Product from '../component/Product';
 import { Helmet } from 'react-helmet-async';
@@ -27,12 +25,14 @@ const HomeScreen = () => {
     error: '',
     products: [],
   });
+
   //const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
         const resault = await axios.get('/api/products');
+        //https://meernn.herokuapp.com/api/products
         dispatch({ type: 'FETCH_SUCCESS', payload: resault.data });
       } catch (error) {
         dispatch({ type: 'FETCH_FAIL', payload: error.message });

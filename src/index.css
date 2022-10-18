@@ -13,9 +13,9 @@ body {
   font-weight: 600;
 }
 
-.site-container {
+/* .site-container {
   min-height: 100vh;
-}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -25,7 +25,8 @@ code {
 main {
   flex: 1;
 }
-.btn-primary {
+.btn-primary,
+.btn-outline-primary {
   background-color: #f0c040;
   color: #000000;
 }
@@ -46,7 +47,20 @@ main {
 
 .product img {
   width: 100%;
+  min-height: 330px;
   max-width: 400px;
+}
+a {
+  text-decoration: none;
+  color: #404040;
+}
+a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+button:hover {
+  background-color: #000000 !important;
+  color: #ffc000 !important;
 }
 
 .product-info {
@@ -79,11 +93,44 @@ main {
   border-bottom: 0.2rem solid #f08000;
   color: #f08000;
 }
-.back-btn {
+
+/* siderbar */
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-brand img {
+  position: absolute;
+  width: 10rem;
+  height: 4rem;
+  left: 4.5%;
+  top: 25%;
+}
+.side-navbar {
+  width: 240px;
+  height: 100%;
+  position: absolute;
+  left: -300px;
+  background-color: #100901;
+  transition: 0.5s;
+}
+.site-container {
+  transition: 0.4s;
+}
+.active-cont {
+  margin-left: 240px;
+}
+.active-nav {
+  left: 0;
+}
+
+.back-btn,
+.cancel-btn {
   margin-left: 30px;
   text-decoration: none;
   color: #ffc000;
 }
+
 .edit-btn {
   text-decoration: none;
   color: #ffc000;
@@ -109,4 +156,7 @@ main {
 .preview-btn:hover {
   background-color: #000000;
   color: #f0c040;
+}
+.text-bold {
+  font-weight: bold;
 }

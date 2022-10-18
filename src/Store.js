@@ -2,6 +2,10 @@ import { createContext, useContext, useReducer } from 'react';
 
 const Store = createContext();
 
+const user = localStorage.getItem('userInfo')
+  ? JSON.parse(localStorage.getItem('userInfo'))
+  : null;
+
 const inintialState = {
   userInfo: localStorage.getItem('userInfo')
     ? JSON.parse(localStorage.getItem('userInfo'))
@@ -10,9 +14,10 @@ const inintialState = {
     shippingAddress: localStorage.getItem('shippingAddress')
       ? JSON.parse(localStorage.getItem('shippingAddress'))
       : {},
-    CartItems: localStorage.getItem('CartItems')
-      ? JSON.parse(localStorage.getItem('CartItems'))
-      : [],
+    CartItems:
+      localStorage.getItem('CartItems') && user
+        ? JSON.parse(localStorage.getItem('CartItems'))
+        : [],
     paymentMethod: localStorage.getItem('paymentMethod')
       ? localStorage.getItem('paymentMethod')
       : '',
