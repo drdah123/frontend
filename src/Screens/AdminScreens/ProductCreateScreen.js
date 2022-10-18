@@ -52,7 +52,7 @@ const ProductCreateScreen = () => {
     dispatch({ type: 'CREATE_REQUEST' });
     try {
       await axios.post(
-        `/api/products`,
+        `https://meernn.herokuapp.com/api/products`,
         {
           name,
           slug,

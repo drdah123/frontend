@@ -32,7 +32,7 @@ const DashboardScreen = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get('/api/orders/summary', {
+        const { data } = await axios.get('https://meernn.herokuapp.com/api/orders/summary', {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         dispatch({

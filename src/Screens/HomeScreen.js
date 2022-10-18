@@ -32,10 +32,10 @@ const HomeScreen = () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
 <<<<<<< HEAD
-        const resault = await axios.get('/api/products');
+        const resault = await get('https://meernn.herokuapp.com/api/products');
         //https://meernn.herokuapp.com/api/products
 =======
-        const resault = await axios.get('https://meernn.herokuapp.com/api/products');
+        const resault = await get('https://meernn.herokuapp.com/api/products');
 >>>>>>> f37001ad66808466b7337bc81f0c305214edbaa7
         dispatch({ type: 'FETCH_SUCCESS', payload: resault.data });
       } catch (error) {

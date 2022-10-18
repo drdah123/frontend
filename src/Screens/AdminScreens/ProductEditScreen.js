@@ -60,7 +60,7 @@ const ProductEditScreen = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get(`/api/products/${productId}`);
+        const { data } = await axios.get(`https://meernn.herokuapp.com/api/products/${productId}`);
         setName(data.name);
         setSlug(data.slug);
         setBrand(data.brand);
@@ -86,7 +86,7 @@ const ProductEditScreen = () => {
     try {
       dispatch({ type: 'UPDATE_REQUEST' });
       await axios.put(
-        `/api/products/${productId}`,
+        `https://meernn.herokuapp.com/api/products/${productId}`,
         {
           _id: productId,
           name,
@@ -116,7 +116,7 @@ const ProductEditScreen = () => {
     bodyFormData.append('file', file);
     try {
       dispatch({ type: 'UPLOAD_REQUEST' });
-      const { data } = await axios.post('/api/upload', bodyFormData, {
+      const { data } = await axios.post('https://meernn.herokuapp.com/api/upload', bodyFormData, {
         headers: {
           'content-Type': 'maltipart/form-data',
           authorization: `Bearer ${userInfo.token}`,

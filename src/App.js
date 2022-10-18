@@ -52,7 +52,7 @@ function App() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const { data } = await axios.get('/api/products/categories');
+        const { data } = await axios.get('https://meernn.herokuapp.com/api/products/categories');
         setCategories(data);
         console.log(categories);
       } catch (error) {

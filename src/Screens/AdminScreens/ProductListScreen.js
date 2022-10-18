@@ -45,7 +45,7 @@ const UsersListScreen = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get(`/api/products/admin?page=${page}`, {
+        const { data } = await axios.get(`https://meernn.herokuapp.com/api/products/admin?page=${page}`, {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         dispatch({
