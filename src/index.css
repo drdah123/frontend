@@ -101,10 +101,9 @@ button:hover {
 
 .navbar-brand img {
   position: absolute;
-  width: 10rem;
-  height: 4rem;
-  left: 4.5%;
-  top: 25%;
+  width: 3rem;
+  left: 8%;
+  top: 35%;
 }
 .side-navbar {
   width: 240px;
