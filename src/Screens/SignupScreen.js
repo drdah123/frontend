@@ -24,7 +24,7 @@ const SignupScreen = () => {
     if (password !== confirmPassword)
       return toast.error('Passwords are not the same');
     try {
-      const { data } = await axios.post('/api/users/signup', {
+      const { data } = await axios.post('https://meernn.herokuapp.com/api/users/signup', {
         email,
         password,
         name,
