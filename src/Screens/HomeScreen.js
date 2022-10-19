@@ -35,7 +35,7 @@ const HomeScreen = () => {
         const resault = await axios.get(
           `${process.env.REACT_APP_SERVER_URL}/api/products`
         );
-        //https://meernn.herokuapp.com/api/products
+
         dispatch({ type: 'FETCH_SUCCESS', payload: resault.data });
       } catch (error) {
         dispatch({ type: 'FETCH_FAIL', payload: error.message });

@@ -63,6 +63,7 @@ const ProductEditScreen = () => {
         const { data } = await axios.get(
           `${process.env.REACT_APP_SERVER_URL}/api/products/${productId}`
         );
+
         setName(data.name);
         setSlug(data.slug);
         setBrand(data.brand);
@@ -89,6 +90,7 @@ const ProductEditScreen = () => {
       dispatch({ type: 'UPDATE_REQUEST' });
       await axios.put(
         `${process.env.REACT_APP_SERVER_URL}/api/products/${productId}`,
+
         {
           _id: productId,
           name,
@@ -128,6 +130,7 @@ const ProductEditScreen = () => {
           },
         }
       );
+
       dispatch({ type: 'UPLOAD_SUCCESS' });
       // setImage(data.secure_url);
       setImage(data.secure_url);
