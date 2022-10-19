@@ -15,7 +15,7 @@ const Product = (props) => {
     const existedItem = CartItems.find((element) => element._id === item._id);
     const quantity = existedItem ? existedItem.quantity + 1 : 1;
     const { data } = await axios.get(
-      `${process.env.REACT_APP_SERVER_URL}}/api/products/${item._id}`
+      `${process.env.REACT_APP_SERVER_URL}/api/products/${item._id}`
     );
     if (data.countInStock < quantity) {
       window.alert(`Sorry, there is ${data.countInStock} `);

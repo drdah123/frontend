@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useReducer } from 'react';
-import { toast } from 'react-toastify';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LoadingBox from '../../component/LoadingBox';
 import MessageBox from '../../component/MessageBox';

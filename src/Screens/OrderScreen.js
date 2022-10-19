@@ -94,7 +94,7 @@ const OrderScreen = () => {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
         const { data } = await axios.get(
-          `${process.env.REACT_APP_SERVER_URL}}/api/orders/${orderId}`,
+          `${process.env.REACT_APP_SERVER_URL}/api/orders/${orderId}`,
           {
             headers: { authorization: `Bearer ${userInfo.token}` },
           }
@@ -115,7 +115,7 @@ const OrderScreen = () => {
     } else {
       const loadPaypalScript = async () => {
         const { data: clientId } = await axios.get(
-          `${process.env.REACT_APP_SERVER_URL}}/api/keys/paypal`,
+          `${process.env.REACT_APP_SERVER_URL}/api/keys/paypal`,
           {
             headers: { authorization: `Bearer ${userInfo.token}` },
           }

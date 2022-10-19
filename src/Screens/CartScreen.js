@@ -14,7 +14,7 @@ const CartScreen = () => {
   } = state;
   const updateCartHandler = async (item, quantity) => {
     const { data } = await axios.get(
-      `${process.env.REACT_APP_SERVER_URL}}/api/products/${item._id}`
+      `${process.env.REACT_APP_SERVER_URL}/api/products/${item._id}`
     );
     if (data.countInStock < quantity) {
       window.alert(`Sorry, there is ${data.countInStock} `);

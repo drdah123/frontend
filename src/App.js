@@ -54,7 +54,7 @@ function App() {
     const fetchCategories = async () => {
       try {
         const { data } = await axios.get(
-          `${process.env.REACT_APP_SERVER_URL}}/api/products/categories`
+          `${process.env.REACT_APP_SERVER_URL}/api/products/categories`
         );
         setCategories(data);
         console.log(categories);
@@ -88,12 +88,7 @@ function App() {
                 <i className="fas fa-bars" />
               </Button>
               <LinkContainer className="logo" to="/">
-                <Navbar.Brand>amazo</Navbar.Brand>
-              </LinkContainer>
-              <LinkContainer className="logo" to="/">
-                <Navbar.Brand>
-                  <img src={Logo} alt="amaon logr" />
-                </Navbar.Brand>
+                <Navbar.Brand>amazona</Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
