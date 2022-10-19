@@ -44,7 +44,7 @@ const PlaceorderScreen = () => {
       distpatch({ type: 'CREATE_REQUEST' });
 
       const { data } = await axios.post(
-        'https://meernn.herokuapp.com/api/orders',
+        `${process.env.REACT_APP_SERVER_URL}}/api/orders`,
         {
           orderItems: cart.CartItems,
           shippingAddress: cart.shippingAddress,

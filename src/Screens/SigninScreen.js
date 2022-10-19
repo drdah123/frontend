@@ -21,10 +21,13 @@ const SigninScreen = () => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post('https://meernn.herokuapp.com/api/users/signin', {
-        email,
-        password,
-      });
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_SERVER_URL}/api/users/signin`,
+        {
+          email,
+          password,
+        }
+      );
       ctxDipatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
       navigate(redirect || '/');

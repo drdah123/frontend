@@ -36,7 +36,9 @@ const ProductScreen = () => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
-        const resault = await axios.get(`https://meernn.herokuapp.com/api/products/slug/${slug}`);
+        const resault = await axios.get(
+          `${process.env.REACT_APP_SERVER_URL}/api/products/slug/${slug}`
+        );
         dispatch({ type: 'FETCH_SUCCESS', payload: resault.data });
       } catch (error) {
         dispatch({ type: 'FETCH_FAIL', payload: getError(error) });
@@ -51,7 +53,9 @@ const ProductScreen = () => {
   const addToCartHandler = async () => {
     const existedItem = cart.CartItems.find((x) => x._id === product._id);
     const quantity = existedItem ? existedItem.quantity + 1 : 1;
-    const { data } = await axios.get(`https://meernn.herokuapp.com/api/products/${product._id}`);
+    const { data } = await axios.get(
+      `${process.env.REACT_APP_SERVER_URL}/api/products/${product._id}`
+    );
     if (data.countInStock < quantity) {
       window.alert(`Sorry, there is ${data.countInStock} `);
       return;

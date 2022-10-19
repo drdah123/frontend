@@ -35,6 +35,7 @@ import UsersListScreen from './Screens/AdminScreens/UsersListScreen';
 import AdminRoute from './component/AdminRoute';
 import ProductEditScreen from './Screens/AdminScreens/ProductEditScreen';
 import ProductCreateScreen from './Screens/AdminScreens/ProductCreateScreen';
+
 function App() {
   const { state, dispatch: ctxDipatch } = useStateContext();
   const { cart, userInfo } = state;
@@ -52,7 +53,9 @@ function App() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const { data } = await axios.get('/api/products/categories');
+        const { data } = await axios.get(
+          `${process.env.REACT_APP_SERVER_URL}}/api/products/categories`
+        );
         setCategories(data);
         console.log(categories);
       } catch (error) {

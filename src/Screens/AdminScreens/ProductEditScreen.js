@@ -60,7 +60,9 @@ const ProductEditScreen = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get(`/api/products/${productId}`);
+        const { data } = await axios.get(
+          `${process.env.REACT_APP_SERVER_URL}/api/products/${productId}`
+        );
         setName(data.name);
         setSlug(data.slug);
         setBrand(data.brand);
@@ -86,7 +88,7 @@ const ProductEditScreen = () => {
     try {
       dispatch({ type: 'UPDATE_REQUEST' });
       await axios.put(
-        `/api/products/${productId}`,
+        `${process.env.REACT_APP_SERVER_URL}/api/products/${productId}`,
         {
           _id: productId,
           name,
@@ -116,12 +118,16 @@ const ProductEditScreen = () => {
     bodyFormData.append('file', file);
     try {
       dispatch({ type: 'UPLOAD_REQUEST' });
-      const { data } = await axios.post('/api/upload', bodyFormData, {
-        headers: {
-          'content-Type': 'maltipart/form-data',
-          authorization: `Bearer ${userInfo.token}`,
-        },
-      });
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_SERVER_URL}/api/upload`,
+        bodyFormData,
+        {
+          headers: {
+            'content-Type': 'maltipart/form-data',
+            authorization: `Bearer ${userInfo.token}`,
+          },
+        }
+      );
       dispatch({ type: 'UPLOAD_SUCCESS' });
       // setImage(data.secure_url);
       setImage(data.secure_url);

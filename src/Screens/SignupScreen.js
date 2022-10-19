@@ -24,11 +24,14 @@ const SignupScreen = () => {
     if (password !== confirmPassword)
       return toast.error('Passwords are not the same');
     try {
-      const { data } = await axios.post('https://meernn.herokuapp.com/api/users/signup', {
-        email,
-        password,
-        name,
-      });
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_SERVER_URL}/api/users/signup`,
+        {
+          email,
+          password,
+          name,
+        }
+      );
       ctxDipatch({
         type: 'USER_SIGNIN',
         payload: data,

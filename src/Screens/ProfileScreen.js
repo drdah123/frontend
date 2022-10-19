@@ -38,7 +38,7 @@ const ProfileScreen = () => {
     try {
       dispatch({ type: 'UPDATE_REQUEST' });
       const { data } = await axios.put(
-        'https://meernn.herokuapp.com/api/users/profile',
+        `${process.env.REACT_APP_SERVER_URL}/api/users/profile`,
         {
           name,
           email,

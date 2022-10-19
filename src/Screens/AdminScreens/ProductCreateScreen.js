@@ -52,7 +52,7 @@ const ProductCreateScreen = () => {
     dispatch({ type: 'CREATE_REQUEST' });
     try {
       await axios.post(
-        `/api/products`,
+        `${process.env.REACT_APP_SERVER_URL}/api/products`,
         {
           name,
           slug,

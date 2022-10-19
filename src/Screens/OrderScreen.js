@@ -70,7 +70,7 @@ const OrderScreen = () => {
           type: 'PAY_REQUEST',
         });
         const { data } = await axios.put(
-          `https://meernn.herokuapp.com/api/orders/${order._id}/pay`,
+          `${process.env.REACT_APP_SERVER_URL}/api/orders/${order._id}/pay`,
           details,
           {
             headers: { authorization: `Bearer ${userInfo.token}` },
@@ -93,9 +93,12 @@ const OrderScreen = () => {
     const fetchOrder = async () => {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await axios.get(`https://meernn.herokuapp.com/api/orders/${orderId}`, {
-          headers: { authorization: `Bearer ${userInfo.token}` },
-        });
+        const { data } = await axios.get(
+          `${process.env.REACT_APP_SERVER_URL}}/api/orders/${orderId}`,
+          {
+            headers: { authorization: `Bearer ${userInfo.token}` },
+          }
+        );
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
@@ -111,9 +114,12 @@ const OrderScreen = () => {
       }
     } else {
       const loadPaypalScript = async () => {
-        const { data: clientId } = await axios.get('https://meernn.herokuapp.com/api/keys/paypal', {
-          headers: { authorization: `Bearer ${userInfo.token}` },
-        });
+        const { data: clientId } = await axios.get(
+          `${process.env.REACT_APP_SERVER_URL}}/api/keys/paypal`,
+          {
+            headers: { authorization: `Bearer ${userInfo.token}` },
+          }
+        );
         paypalDispatch({
           type: 'resetOptions',
           value: {
