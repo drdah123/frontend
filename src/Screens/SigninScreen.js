@@ -31,7 +31,6 @@ const SigninScreen = () => {
       ctxDipatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
       navigate(redirect || '/');
-      console.log(userInfo);
     } catch (error) {
       toast.error(getError(error));
     }

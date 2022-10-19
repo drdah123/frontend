@@ -57,7 +57,6 @@ function App() {
           `${process.env.REACT_APP_SERVER_URL}/api/products/categories`
         );
         setCategories(data);
-        console.log(categories);
       } catch (error) {
         toast.error(error);
       }

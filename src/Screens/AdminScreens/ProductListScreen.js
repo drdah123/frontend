@@ -54,7 +54,6 @@ const UsersListScreen = () => {
           type: 'FETCH_SUCCESS',
           payload: data,
         });
-        console.log(data);
       } catch (error) {
         dispatch({
           typea: 'FETCH_FAIL',

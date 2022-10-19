@@ -40,7 +40,6 @@ const OrderHistoryScreen = () => {
           }
         );
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
-        console.log(data);
       } catch (error) {
         dispatch({ type: 'FETCH_FAIL', payload: getError(error) });
       }

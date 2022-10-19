@@ -94,7 +94,6 @@ const SearchScreen = () => {
           type: 'FETCH_SUCCESS',
           payload: data,
         });
-        console.log(data);
       } catch (error) {
         dispatch({
           type: 'FETCH_FAIL',
