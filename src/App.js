@@ -176,49 +176,49 @@ function App() {
               <Route
                 path="/admin/dashboard"
                 element={
-                  <AdminRoute>
-                    <DashboardScreen />
-                  </AdminRoute>
+                  // <AdminRoute>
+                  <DashboardScreen />
+                  // </AdminRoute>
                 }
               />
               <Route
                 path="/admin/orderlist"
                 element={
-                  <AdminRoute>
-                    <OrderLisrScreen />
-                  </AdminRoute>
+                  // <AdminRoute>
+                  <OrderLisrScreen />
+                  // </AdminRoute>
                 }
               />
               <Route
                 path="/admin/productlist"
                 element={
-                  <AdminRoute>
-                    <ProductListScreen />
-                  </AdminRoute>
+                  // <AdminRoute>
+                  <ProductListScreen />
+                  // </AdminRoute>
                 }
               />
               <Route
                 path="/admin/productcreate"
                 element={
-                  <AdminRoute>
-                    <ProductCreateScreen />
-                  </AdminRoute>
+                  // <AdminRoute>
+                  <ProductCreateScreen />
+                  // </AdminRoute>
                 }
               />
               <Route
                 path="/admin/product/:id"
                 element={
-                  <AdminRoute>
-                    <ProductEditScreen />
-                  </AdminRoute>
+                  // <AdminRoute>
+                  <ProductEditScreen />
+                  // </AdminRoute>
                 }
               />
               <Route
                 path="/admin/userslist"
                 element={
-                  <AdminRoute>
-                    <UsersListScreen />
-                  </AdminRoute>
+                  // <AdminRoute>
+                  <UsersListScreen />
+                  // </AdminRoute>
                 }
               />
               <Route path="/search" element={<SearchScreen />} />
